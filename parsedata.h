@@ -1,0 +1,20 @@
+int *pathIdxLst(char *);
+int pathIdx(char *);
+int structIdx(char *);
+void *structAlloc(char *);
+void *structAllocByIdx(int);
+void **addStruct(void **, void *);
+void *memberSwitchParse(char *, struct config *, int);
+void *getMemberPtr(char *, struct config *);
+void *fMemberPtr(char *, struct config *);
+char **deleteDoubleEntries(char **);
+int findSubStructure(int, char **);
+int typevNTL(char *);
+int getRecursionLevel(char *);
+int __pa2xAllocated(char *, struct varNameTypeList *);
+void freeConfigvNTL(char *, struct config *, int, struct varNameTypeList *, int, int);
+char *getPathParent(char *);
+// struct line *freeConfigStructContent(struct config *, struct varNameTypeList *);
+void *listObjByName(char *, struct config *);
+void freeObjByNameList(void **);
+

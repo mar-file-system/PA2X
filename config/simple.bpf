@@ -1,0 +1,12 @@
+<config>
+
+<config_name>string-name-of-configuration</config_name>
+
+<version>configuration-version-string</version>
+
+<repo : type=__list>
+   <name>name of repo</name>
+   <type>type of repo</type>
+</repo>
+
+</config>
