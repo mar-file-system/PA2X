@@ -239,7 +239,7 @@ f_ptr = fopen(fn, "r");											// open config file
 if (f_ptr != (FILE *)NULL) {										// on succesful open
    fseek(f_ptr, 0, SEEK_END);										// go to last position
    f_size = ftell(f_ptr);										// get position
-   conf = (char *)malloc((size_t)f_size + 1);								// alloc 1 byte more for termination
+   conf = (char *)malloc((size_t)f_size + 2);								// alloc 1 byte more for termination
    if (conf != (char *)NULL) {
       fseek(f_ptr, 0, SEEK_SET);									// go back to start of file
       clearerr(f_ptr);
@@ -250,7 +250,7 @@ if (f_ptr != (FILE *)NULL) {										// on succesful open
          ln_cnt++;
          prepConfigFileLine(line, ln_cnt);
          sprintf(nl_ptr, "%s\n", line);
-         nl_ptr += strlen(line);
+         nl_ptr += strlen(line)+1;
          line[0]=0;
          }
       }
