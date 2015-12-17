@@ -192,15 +192,17 @@ if (line[0] == '#') {
    return line;
    } 
 
-cmmnt_ptr = strstr(line, "#");										// look for a # sign
-if (cmmnt_ptr == (char *)NULL)
-   return line;												// if there isn't one just return
+if (strlen(line) > 0) {
+   while (isspace(line[strlen(line)-1]))
+      line[strlen(line)-1] = 0;							// now the last '\n' is stripped from ALL lines
+   }
 
-if (line[strlen(line)-1] == '\n')
-   line[strlen(line)-1] = 0;										// now the last '\n' is stripped from ALL lines
- 
 c_ptr = line;
 cmmnt_ptr = strstr(line, "#");
+
+if (cmmnt_ptr == (char *)NULL)
+   return line;
+
 countLtGtTokens(&lt_cnt, &gt_cnt, c_ptr, cmmnt_ptr);
 
 if ((lt_cnt == 0 && gt_cnt == 0) || (lt_cnt == 2 && gt_cnt == 2)) {		//      |#           ......   OR    |  <>  <> #
@@ -232,7 +234,7 @@ char *readConfigFile(char *fn)
 {
 FILE *f_ptr;
 long int f_size;
-int ln_cnt = 0;
+int ln_cnt = 0, ln_total=0;
 char line[CFG_LINE_SZ],  *conf, *nl_ptr;
 
 f_ptr = fopen(fn, "r");											// open config file
