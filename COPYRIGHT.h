@@ -40,7 +40,7 @@ NOTE:
 -----
 pa2X is released under the BSD license.
 pa2X was reviewed and released by LANL under Los Alamos Computer Code identifier:
-LA-CC-15-XXX.
+LA-CC-15-111.
 
 GNU licenses can be found at http://www.gnu.org/licenses/.
 */
