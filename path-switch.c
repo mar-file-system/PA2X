@@ -132,8 +132,8 @@ if (fs_ptr != (FILE *)NULL && fn_ptr != (FILE *)NULL) {								// we need these 
                getvNTLlistName(str_line);
                fprintf(fs_ptr, "         return (void **)&(%s);\n", str_line);
                fprintf(fs_ptr, "   if (sw_task == GET_LST_MBR_PTR) {\n");
-               fprintf(fs_ptr, "      if ((void **)&(%s) == (void **)NULL)\n", str_line);
-               fprintf(fs_ptr, "         return (void **)&(%s);\n", str_line);
+               fprintf(fs_ptr, "      if ((void **)(%s) == (void **)NULL)\n", str_line);
+               fprintf(fs_ptr, "         return (void **)(%s);\n", str_line);
                fprintf(fs_ptr, "      else\n");
                fprintf(fs_ptr, "        return %s", str_line);
                srl = countStructRecursionLvl(str_line);
