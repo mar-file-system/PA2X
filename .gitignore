@@ -1,0 +1,6 @@
+
+confpars
+datapars
+parse-inc/*
+*.o
+
